@@ -76,10 +76,10 @@ body {
 
 .circles {
   position: absolute;
-  top: 0;
+  top: 10vh;
   left: 0;
   width: 100vw;
-  height: 100%;
+  height: 110%;
   overflow: hidden;
   margin: 0;
 }
