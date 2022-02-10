@@ -7,6 +7,12 @@ import './App.css';
 
 // const win = new BrowserWindow({ frame: false })
 
+const Question = () => {
+
+  return (
+    <div>...</div>
+  )
+}
 const HomePage = () => {
   const [title, SetTitle] = useState('Quiz !');
 
@@ -92,6 +98,7 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<Question />} />
       </Routes>
     </Router>
   );

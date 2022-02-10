@@ -58,6 +58,9 @@ body {
   transform: scale(1.1);
 }
 
+
+
+
 .title {
   font-family: 'Comfortaa', cursive;
   font-size: calc(3vh + 2.5vw + 20px);
@@ -65,6 +68,10 @@ body {
 }
 
 .settings {
+  height: 8vh;
+  width: 8vh;
+  align-text: center;
+  z-index: 3;
   top: 0;
   left: 0;
   position: absolute;
@@ -72,6 +79,12 @@ body {
   border: 0;
   color : rgb(49, 49, 49);
   font-size: calc(1.5vh + 1.5vw + 15px);
+  transform: rotate(0deg);
+  transition: all 0.5s ease-in-out;
+}
+
+.settings:focus {
+  transform: rotate(345deg);
 }
 
 .area {
