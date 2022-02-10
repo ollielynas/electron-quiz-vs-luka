@@ -37,6 +37,7 @@ const HomePage = () => {
 
   return (
     <div className="App">
+      <button type="button" className="settings">&#x2699;</button>
       <Bubbles />
       <div className="content">
         <div className="title">
@@ -68,7 +69,7 @@ const HomePage = () => {
 
           }}
         >
-          Create quiz &nbsp;{'>'}
+          Edit Question &nbsp;{'>'}
         </button>
         <button
         className="button"
@@ -77,7 +78,7 @@ const HomePage = () => {
             console.log('owo');
           }}
         >
-          Import quiz &nbsp;{'>'}
+          Import / Create Questions &nbsp;{'>'}
         </button>
       </div>
         {/* <button onClick = { () => {toggle}}>{playing ? "Pause" : "Play"}</button> */}

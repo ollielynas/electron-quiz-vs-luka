@@ -64,6 +64,16 @@ body {
   color: black;
 }
 
+.settings {
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: #00000000;
+  border: 0;
+  color : rgb(49, 49, 49);
+  font-size: calc(1.5vh + 1.5vw + 15px);
+}
+
 .area {
   background: #4e54c8;
   background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
@@ -72,14 +82,14 @@ body {
   height: 100vh;
 }
 
-/* credit to https://codepen.io/mohaiman/pen/MQqMyo for background */
+/* ---------- credit to https://codepen.io/mohaiman/pen/MQqMyo for background ---------------------------------------*/
 
 .circles {
   position: absolute;
-  top: 10vh;
+  bottom: -15vh;
   left: 0;
   width: 100vw;
-  height: 110%;
+  height: 115vh;
   overflow: hidden;
   margin: 0;
 }
