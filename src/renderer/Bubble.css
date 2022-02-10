@@ -1,0 +1,509 @@
+.bubbles {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.bubble {
+  position: absolute;
+  left: var(--bubble-left-offset);
+  bottom: -75%;
+  display: block;
+  width: var(--bubble-radius);
+  height: var(--bubble-radius);
+  border-radius: 50%;
+  animation: float-up var(--bubble-float-duration) var(--bubble-float-delay)
+    ease-in infinite;
+}
+.bubble::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(136, 246, 251, 0.3);
+  border-radius: inherit;
+  animation: var(--bubble-sway-type) var(--bubble-sway-duration)
+    var(--bubble-sway-delay) ease-in-out alternate infinite;
+}
+.bubble:nth-child(0) {
+  --bubble-left-offset: 31771657264vw;
+  --bubble-radius: 4752063101vw;
+  --bubble-float-duration: 2612317084s;
+  --bubble-sway-duration: 4304238466s;
+  --bubble-float-delay: 6333091495s;
+  --bubble-sway-delay: 7780018540s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(1) {
+  --bubble-left-offset: 90441537265vw;
+  --bubble-radius: 4626047831vw;
+  --bubble-float-duration: 597604636s;
+  --bubble-sway-duration: 1871809411s;
+  --bubble-float-delay: 5030855230s;
+  --bubble-sway-delay: 8438455160s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(2) {
+  --bubble-left-offset: 199343009059vw;
+  --bubble-radius: 3417381571vw;
+  --bubble-float-duration: 3249162307s;
+  --bubble-sway-duration: 5872564921s;
+  --bubble-float-delay: 9435565765s;
+  --bubble-sway-delay: 3196844540s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(3) {
+  --bubble-left-offset: 99654566072vw;
+  --bubble-radius: 17765951471vw;
+  --bubble-float-duration: 14975671661s;
+  --bubble-sway-duration: 3411542122s;
+  --bubble-float-delay: 8570014300s;
+  --bubble-sway-delay: 338678660s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(4) {
+  --bubble-left-offset: 32718702045vw;
+  --bubble-radius: 12197489721vw;
+  --bubble-float-duration: 12012295182s;
+  --bubble-sway-duration: 5169144769s;
+  --bubble-float-delay: 2571339565s;
+  --bubble-sway-delay: 387670330s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(5) {
+  --bubble-left-offset: 92278471331vw;
+  --bubble-radius: 9402517391vw;
+  --bubble-float-duration: 70060087s;
+  --bubble-sway-duration: 5761866451s;
+  --bubble-float-delay: 651885265s;
+  --bubble-sway-delay: 5128062880s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(6) {
+  --bubble-left-offset: 127006021562vw;
+  --bubble-radius: 19139355461vw;
+  --bubble-float-duration: 2699788160s;
+  --bubble-sway-duration: 4598777257s;
+  --bubble-float-delay: 6534401065s;
+  --bubble-sway-delay: 2364027925s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(7) {
+  --bubble-left-offset: 35092522821vw;
+  --bubble-radius: 15939132431vw;
+  --bubble-float-duration: 12005199387s;
+  --bubble-sway-duration: 6429278269s;
+  --bubble-float-delay: 8876251190s;
+  --bubble-sway-delay: 8864163560s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(8) {
+  --bubble-left-offset: 81767964406vw;
+  --bubble-radius: 3774712171vw;
+  --bubble-float-duration: 506241231s;
+  --bubble-sway-duration: 4613708545s;
+  --bubble-float-delay: 2376576355s;
+  --bubble-sway-delay: 3569276630s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(9) {
+  --bubble-left-offset: 190753980876vw;
+  --bubble-radius: 6680622921vw;
+  --bubble-float-duration: 11938969475s;
+  --bubble-sway-duration: 4390731265s;
+  --bubble-float-delay: 7423213080s;
+  --bubble-sway-delay: 8573338450s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(10) {
+  --bubble-left-offset: 130668189955vw;
+  --bubble-radius: 16605120491vw;
+  --bubble-float-duration: 7596044462s;
+  --bubble-sway-duration: 1893890800s;
+  --bubble-float-delay: 1975080185s;
+  --bubble-sway-delay: 1714749510s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(11) {
+  --bubble-left-offset: 148984329875vw;
+  --bubble-radius: 1587711981vw;
+  --bubble-float-duration: 151293078s;
+  --bubble-sway-duration: 535953973s;
+  --bubble-float-delay: 10017863470s;
+  --bubble-sway-delay: 2954479240s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(12) {
+  --bubble-left-offset: 134116667901vw;
+  --bubble-radius: 21455382121vw;
+  --bubble-float-duration: 4779460377s;
+  --bubble-sway-duration: 2783041507s;
+  --bubble-float-delay: 6050257075s;
+  --bubble-sway-delay: 526548245s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(13) {
+  --bubble-left-offset: 8216489986vw;
+  --bubble-radius: 7480191051vw;
+  --bubble-float-duration: 3739452744s;
+  --bubble-sway-duration: 3607292617s;
+  --bubble-float-delay: 7177334765s;
+  --bubble-sway-delay: 9252078980s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(14) {
+  --bubble-left-offset: 198653195219vw;
+  --bubble-radius: 19422885441vw;
+  --bubble-float-duration: 839352996s;
+  --bubble-sway-duration: 1396367683s;
+  --bubble-float-delay: 8837130255s;
+  --bubble-sway-delay: 6458970195s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(15) {
+  --bubble-left-offset: 21677519506vw;
+  --bubble-radius: 6428607871vw;
+  --bubble-float-duration: 9473241049s;
+  --bubble-sway-duration: 1165323973s;
+  --bubble-float-delay: 607810735s;
+  --bubble-sway-delay: 8174615565s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(16) {
+  --bubble-left-offset: 1211673669vw;
+  --bubble-radius: 14646142471vw;
+  --bubble-float-duration: 4672008067s;
+  --bubble-sway-duration: 1533991618s;
+  --bubble-float-delay: 5217167305s;
+  --bubble-sway-delay: 8473020325s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(17) {
+  --bubble-left-offset: 147222741203vw;
+  --bubble-radius: 19580009581vw;
+  --bubble-float-duration: 3511522853s;
+  --bubble-sway-duration: 3886192366s;
+  --bubble-float-delay: 8181395385s;
+  --bubble-sway-delay: 9934357055s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(18) {
+  --bubble-left-offset: 58748880282vw;
+  --bubble-radius: 17123668711vw;
+  --bubble-float-duration: 202622293s;
+  --bubble-sway-duration: 2169253840s;
+  --bubble-float-delay: 3574570285s;
+  --bubble-sway-delay: 2425833845s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(19) {
+  --bubble-left-offset: 134718715771vw;
+  --bubble-radius: 4620854061vw;
+  --bubble-float-duration: 4438392034s;
+  --bubble-sway-duration: 1505595592s;
+  --bubble-float-delay: 6876830625s;
+  --bubble-sway-delay: 7583020315s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(20) {
+  --bubble-left-offset: 131612325229vw;
+  --bubble-radius: 14059112731vw;
+  --bubble-float-duration: 11016693708s;
+  --bubble-sway-duration: 5350317997s;
+  --bubble-float-delay: 2454120295s;
+  --bubble-sway-delay: 5536252770s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(21) {
+  --bubble-left-offset: 11616628120vw;
+  --bubble-radius: 19247963801vw;
+  --bubble-float-duration: 9267393176s;
+  --bubble-sway-duration: 1939854004s;
+  --bubble-float-delay: 3005052455s;
+  --bubble-sway-delay: 1469358690s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(22) {
+  --bubble-left-offset: 62007876875vw;
+  --bubble-radius: 1521238101vw;
+  --bubble-float-duration: 3077705602s;
+  --bubble-sway-duration: 5428389994s;
+  --bubble-float-delay: 2622520400s;
+  --bubble-sway-delay: 8422280115s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(23) {
+  --bubble-left-offset: 149376951316vw;
+  --bubble-radius: 10866468711vw;
+  --bubble-float-duration: 11099950882s;
+  --bubble-sway-duration: 530253820s;
+  --bubble-float-delay: 10689225100s;
+  --bubble-sway-delay: 8764933420s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(24) {
+  --bubble-left-offset: 15063571674vw;
+  --bubble-radius: 8858646671vw;
+  --bubble-float-duration: 10709074291s;
+  --bubble-sway-duration: 906298492s;
+  --bubble-float-delay: 4648114930s;
+  --bubble-sway-delay: 6585560105s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(25) {
+  --bubble-left-offset: 133429361992vw;
+  --bubble-radius: 2034455731vw;
+  --bubble-float-duration: 6145333508s;
+  --bubble-sway-duration: 4871833087s;
+  --bubble-float-delay: 3710224360s;
+  --bubble-sway-delay: 312530100s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(26) {
+  --bubble-left-offset: 88051525785vw;
+  --bubble-radius: 17673571621vw;
+  --bubble-float-duration: 7654838512s;
+  --bubble-sway-duration: 2323204018s;
+  --bubble-float-delay: 6407499875s;
+  --bubble-sway-delay: 5896309120s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(27) {
+  --bubble-left-offset: 104178073474vw;
+  --bubble-radius: 16732946361vw;
+  --bubble-float-duration: 10036100122s;
+  --bubble-sway-duration: 5178647308s;
+  --bubble-float-delay: 2309357445s;
+  --bubble-sway-delay: 4869680580s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(28) {
+  --bubble-left-offset: 212538892167vw;
+  --bubble-radius: 19751346261vw;
+  --bubble-float-duration: 8582101177s;
+  --bubble-sway-duration: 6363230329s;
+  --bubble-float-delay: 9519490675s;
+  --bubble-sway-delay: 1272104250s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(29) {
+  --bubble-left-offset: 156475624913vw;
+  --bubble-radius: 19876629181vw;
+  --bubble-float-duration: 13767429752s;
+  --bubble-sway-duration: 4836641977s;
+  --bubble-float-delay: 6183616205s;
+  --bubble-sway-delay: 6428672470s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(30) {
+  --bubble-left-offset: 29275423074vw;
+  --bubble-radius: 18097670811vw;
+  --bubble-float-duration: 2305258486s;
+  --bubble-sway-duration: 6178537021s;
+  --bubble-float-delay: 6094562410s;
+  --bubble-sway-delay: 1189178375s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(31) {
+  --bubble-left-offset: 132262990560vw;
+  --bubble-radius: 14124609921vw;
+  --bubble-float-duration: 648116678s;
+  --bubble-sway-duration: 444547561s;
+  --bubble-float-delay: 2761787235s;
+  --bubble-sway-delay: 8624446355s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(32) {
+  --bubble-left-offset: 74071677142vw;
+  --bubble-radius: 6319243711vw;
+  --bubble-float-duration: 6114151945s;
+  --bubble-sway-duration: 98821252s;
+  --bubble-float-delay: 3717019825s;
+  --bubble-sway-delay: 4774330830s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(33) {
+  --bubble-left-offset: 215880036302vw;
+  --bubble-radius: 1374881411vw;
+  --bubble-float-duration: 1187227047s;
+  --bubble-sway-duration: 160178572s;
+  --bubble-float-delay: 10097629505s;
+  --bubble-sway-delay: 3424265950s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(34) {
+  --bubble-left-offset: 142682724240vw;
+  --bubble-radius: 6548078731vw;
+  --bubble-float-duration: 979017577s;
+  --bubble-sway-duration: 3076844623s;
+  --bubble-float-delay: 9006229555s;
+  --bubble-sway-delay: 6715031325s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(35) {
+  --bubble-left-offset: 12273786842vw;
+  --bubble-radius: 21404005961vw;
+  --bubble-float-duration: 14743338448s;
+  --bubble-sway-duration: 3720968770s;
+  --bubble-float-delay: 130267365s;
+  --bubble-sway-delay: 9591117450s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(36) {
+  --bubble-left-offset: 139437141659vw;
+  --bubble-radius: 21296617391vw;
+  --bubble-float-duration: 13904493994s;
+  --bubble-sway-duration: 750067363s;
+  --bubble-float-delay: 3061361105s;
+  --bubble-sway-delay: 6161902410s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(37) {
+  --bubble-left-offset: 124272874197vw;
+  --bubble-radius: 4220070531vw;
+  --bubble-float-duration: 14157120879s;
+  --bubble-sway-duration: 3835359064s;
+  --bubble-float-delay: 223988365s;
+  --bubble-sway-delay: 3996076755s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(38) {
+  --bubble-left-offset: 131241174772vw;
+  --bubble-radius: 11763409731vw;
+  --bubble-float-duration: 7897627835s;
+  --bubble-sway-duration: 4624003222s;
+  --bubble-float-delay: 1876119285s;
+  --bubble-sway-delay: 496794385s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(39) {
+  --bubble-left-offset: 36664138270vw;
+  --bubble-radius: 1498631571vw;
+  --bubble-float-duration: 3520391314s;
+  --bubble-sway-duration: 4680303289s;
+  --bubble-float-delay: 1180251535s;
+  --bubble-sway-delay: 5087231030s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(40) {
+  --bubble-left-offset: 42577154182vw;
+  --bubble-radius: 11547358551vw;
+  --bubble-float-duration: 1149580494s;
+  --bubble-sway-duration: 1576103245s;
+  --bubble-float-delay: 10579182220s;
+  --bubble-sway-delay: 6027517935s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(41) {
+  --bubble-left-offset: 188984583894vw;
+  --bubble-radius: 12036897411vw;
+  --bubble-float-duration: 13511344601s;
+  --bubble-sway-duration: 1296646369s;
+  --bubble-float-delay: 6915181445s;
+  --bubble-sway-delay: 7149474460s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(42) {
+  --bubble-left-offset: 56283824388vw;
+  --bubble-radius: 16544274221vw;
+  --bubble-float-duration: 11661138838s;
+  --bubble-sway-duration: 4018552405s;
+  --bubble-float-delay: 8818921960s;
+  --bubble-sway-delay: 5577536155s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(43) {
+  --bubble-left-offset: 206298677564vw;
+  --bubble-radius: 18567576271vw;
+  --bubble-float-duration: 8182218323s;
+  --bubble-sway-duration: 1758552295s;
+  --bubble-float-delay: 2196861670s;
+  --bubble-sway-delay: 1858603265s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(44) {
+  --bubble-left-offset: 26270401283vw;
+  --bubble-radius: 12611007071vw;
+  --bubble-float-duration: 5994544765s;
+  --bubble-sway-duration: 3727332280s;
+  --bubble-float-delay: 897551350s;
+  --bubble-sway-delay: 3597143725s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(45) {
+  --bubble-left-offset: 81995767482vw;
+  --bubble-radius: 14671850841vw;
+  --bubble-float-duration: 5695240781s;
+  --bubble-sway-duration: 5181635782s;
+  --bubble-float-delay: 7085491895s;
+  --bubble-sway-delay: 2607815430s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(46) {
+  --bubble-left-offset: 73350084763vw;
+  --bubble-radius: 9716637631vw;
+  --bubble-float-duration: 13011596793s;
+  --bubble-sway-duration: 3768601444s;
+  --bubble-float-delay: 2457281865s;
+  --bubble-sway-delay: 8682232040s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(47) {
+  --bubble-left-offset: 109567187640vw;
+  --bubble-radius: 3771855841vw;
+  --bubble-float-duration: 10689805538s;
+  --bubble-sway-duration: 2142625186s;
+  --bubble-float-delay: 572966255s;
+  --bubble-sway-delay: 7429494410s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(48) {
+  --bubble-left-offset: 180221249204vw;
+  --bubble-radius: 572338261vw;
+  --bubble-float-duration: 2440073845s;
+  --bubble-sway-duration: 919113307s;
+  --bubble-float-delay: 6485243075s;
+  --bubble-sway-delay: 9303437835s;
+  --bubble-sway-type: sway-right-to-left;
+}
+.bubble:nth-child(49) {
+  --bubble-left-offset: 211678135928vw;
+  --bubble-radius: 5082315221vw;
+  --bubble-float-duration: 1202442247s;
+  --bubble-sway-duration: 2523081109s;
+  --bubble-float-delay: 9442976910s;
+  --bubble-sway-delay: 4386544325s;
+  --bubble-sway-type: sway-left-to-right;
+}
+.bubble:nth-child(50) {
+  --bubble-left-offset: 96665748620vw;
+  --bubble-radius: 17226515861vw;
+  --bubble-float-duration: 5613905009s;
+  --bubble-sway-duration: 2830818505s;
+  --bubble-float-delay: 2703585230s;
+  --bubble-sway-delay: 6794544575s;
+  --bubble-sway-type: sway-right-to-left;
+}
+@keyframes float-up {
+  to {
+    transform: translateY(-175vh);
+  }
+}
+@keyframes sway-left-to-right {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+@keyframes sway-right-to-left {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
