@@ -1,6 +1,8 @@
 /* eslint-disable prettier/prettier */
 import { useState, useEffect } from 'react';
-import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
+import { MemoryRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+
+
 import './App.css';
 
 // const { BrowserWindow } = require('electron');
@@ -10,7 +12,10 @@ import './App.css';
 const Question = () => {
 
   return (
-    <div>...</div>
+    <div className="Question-Body">
+      <div className="progress-bar2"/>
+      <div className="progress-bar1"/>
+    </div>
   )
 }
 const HomePage = () => {
@@ -20,6 +25,7 @@ const HomePage = () => {
     return new Promise(resolve => setTimeout(resolve, milliseconds))
   }
 
+  const navigate = useNavigate()
 
 
   const Bubbles = () => {
@@ -62,8 +68,9 @@ const HomePage = () => {
             SetTitle('Ready...');
             await sleep(750);
             SetTitle('Go !');
-            await sleep(2000);
-            SetTitle('Quiz !');
+            await sleep(700);
+            navigate(`/Question`, { replace: true })
+
           }}
         >
           Play quiz &nbsp;{'>'}
@@ -98,7 +105,7 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/" element={<Question />} />
+        <Route path="/Question" element={<Question />} />
       </Routes>
     </Router>
   );
