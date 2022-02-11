@@ -11,6 +11,15 @@ import './App.css';
 
 const Question = () => {
 
+  const sleep = (milliseconds: number) => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds))
+  }
+
+  const gameTimer = async () => {
+    sleep(1000);
+    console.log('gameTimer');
+  }
+
   return (
     <div className="Question-Body">
       <div className="progress-bar2"/>
