@@ -109,6 +109,16 @@ body {
   background-color: #FF9A00;
 }
 
+.Question-Body-Text {
+  position: relative;
+  font-family: 'Comfortaa', cursive;
+  font-size: calc(1.5vh + 1.5vw + 15px);
+  color: white;
+  background-color: #ff3300;
+  text-align: center;
+  top: 25vh;
+}
+
 .progress-bar1 {
   height: 3vh;
   width: 101vw;
@@ -117,7 +127,7 @@ body {
   bottom: 0;
   left: -1vw;
   z-index: 10;
-  animation: progressBar 15s linear forwards;
+  animation: progressBar 10s linear forwards;
 }
 .progress-bar2 {
   height: 3vh;
@@ -140,11 +150,13 @@ width: 100vw;
 
 }
 @keyframes progressBar2 {
-  from {
+  0% {
 width: 100vw;
-  }to {
+  }99% {
     width: 0vw;
     --animation-duration: calc(var(--animation-duration)*0.9s);
+  }100% {
+    width: 100vw;
   }
 }
 /* ---------- credit to https://codepen.io/mohaiman/pen/MQqMyo for background ---------------------------------------*/

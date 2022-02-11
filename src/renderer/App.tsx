@@ -11,19 +11,30 @@ import './App.css';
 
 const Question = () => {
 
+  const navigate = useNavigate();
+
   const sleep = (milliseconds: number) => {
     return new Promise(resolve => setTimeout(resolve, milliseconds))
   }
 
   const gameTimer = async () => {
-    sleep(1000);
+    console.log('gameTimer1')
+    sleep(10000);
     console.log('gameTimer');
+
   }
+
+  gameTimer();
 
   return (
     <div className="Question-Body">
+      <div className="Question-Body-Text">
+        <p>Question</p>
+      </div>
       <div className="progress-bar2"/>
-      <div className="progress-bar1"/>
+      <div className="progress-bar1"
+      onAnimationEnd={() => {navigate(`/`, { replace: true })}}
+      />
     </div>
   )
 }
@@ -34,7 +45,7 @@ const HomePage = () => {
     return new Promise(resolve => setTimeout(resolve, milliseconds))
   }
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
 
   const Bubbles = () => {
