@@ -41,17 +41,23 @@ const Question = () => {
 
   gameTimer();
 
+
+
   return (
     <div className="Question-Body">
       <div className="Question-Body-Text">
         <p>{question}</p>
       </div>
+      <button type="button" className="Question-Body-Button" onClick={()=>{newQuestion();}}>True</button>
+      <button type="button" className="Question-Body-Button">False</button>
+      <div key = {reset}>
       <div className="progress-bar2"
-      key = {reset}
+
       onAnimationEnd={() => {
         setReset(reset+1);
         newQuestion();}}
       />
+      </div>
       <div className="progress-bar1"
       onAnimationEnd={() => {navigate(`/`, { replace: true })}}
       />
@@ -109,8 +115,9 @@ const HomePage = () => {
             await sleep(750);
             SetTitle('Go !');
             await sleep(700);
+            document.documentElement.style.setProperty('--animation-duration', '2s');
+            animationDuration = parseInt(styles.getPropertyValue('--animation-duration'), 10);
             navigate(`/Question`, { replace: true })
-
           }}
         >
           Play quiz &nbsp;{'>'}
