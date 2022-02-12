@@ -8,14 +8,29 @@ import './App.css';
 // const { BrowserWindow } = require('electron');
 
 // const win = new BrowserWindow({ frame: false })
+  const styles = getComputedStyle(document.documentElement);
+  let animationDuration:number = parseInt(styles.getPropertyValue('--animation-duration'), 10);
 
 const Question = () => {
 
   const navigate = useNavigate();
+  const [question, setQuestion] = useState('Question');
+  const [reset, setReset] = useState(1);
 
+  console.log("animation duration",animationDuration);
   const sleep = (milliseconds: number) => {
     return new Promise(resolve => setTimeout(resolve, milliseconds))
   }
+
+  const newQuestion = () => {
+    // eslint-disable-next-line prefer-template
+    document.documentElement.style.setProperty('--animation-duration', (animationDuration*0.9).toString() + 's');
+    animationDuration *= 0.95;
+    console.log("new question");
+    setQuestion("Question2");
+  }
+
+
 
   const gameTimer = async () => {
     console.log('gameTimer1')
@@ -29,9 +44,14 @@ const Question = () => {
   return (
     <div className="Question-Body">
       <div className="Question-Body-Text">
-        <p>Question</p>
+        <p>{question}</p>
       </div>
-      <div className="progress-bar2"/>
+      <div className="progress-bar2"
+      key = {reset}
+      onAnimationEnd={() => {
+        setReset(reset+1);
+        newQuestion();}}
+      />
       <div className="progress-bar1"
       onAnimationEnd={() => {navigate(`/`, { replace: true })}}
       />

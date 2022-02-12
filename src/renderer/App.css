@@ -137,7 +137,7 @@ body {
   bottom: 3vh;
   left: -1vw;
   z-index: 10;
-  animation: progressBar2 var(--animation-duration) linear infinite;
+  animation: progressBar2 var(--animation-duration) linear forwards;
 }
 
 @keyframes progressBar {
