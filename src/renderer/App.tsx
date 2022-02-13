@@ -1,9 +1,15 @@
 /* eslint-disable prettier/prettier */
+/* eslint-disable no-console */
+
 import { useState, useEffect } from 'react';
 import { MemoryRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
-
-
+import quizData2 from './QuestionsJSON.json';
 import './App.css';
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const quizData: { [key: string]: any } = quizData2;
+
+console.log(quizData);
 
 // const { BrowserWindow } = require('electron');
 
@@ -16,21 +22,35 @@ const Question = () => {
   const navigate = useNavigate();
   const [question, setQuestion] = useState('Question');
   const [reset, setReset] = useState(1);
+  const [score, setScore] = useState(0);
+
 
   console.log("animation duration",animationDuration);
   const sleep = (milliseconds: number) => {
     return new Promise(resolve => setTimeout(resolve, milliseconds))
   }
 
-  const newQuestion = () => {
+
+  const newQuestion = (ans:boolean | null) => {
+    setReset(reset+1);
+    console.log(ans);
     // eslint-disable-next-line prefer-template
     document.documentElement.style.setProperty('--animation-duration', (animationDuration*0.9).toString() + 's');
     animationDuration *= 0.95;
     console.log("new question");
-    setQuestion("Question2");
+    const keys = Object.keys(quizData.active);
+    console.log(keys);
+    setQuestion(keys[Math.floor(Math.random() * keys.length)]);
+    if (ans!==null) {
+    if (quizData.active[question][1] === ans) {
+      setScore(score+1);
+    }else{setScore(score-1);};
+  }
   }
 
-
+  if (reset === 1) {
+    newQuestion(null);
+  }
 
   const gameTimer = async () => {
     console.log('gameTimer1')
@@ -41,29 +61,29 @@ const Question = () => {
 
   gameTimer();
 
-
-
   return (
     <div className="Question-Body">
+      <div className="Question-score">{score}</div>
       <div className="Question-Body-Text">
         <p>{question}</p>
       </div>
-      <button type="button" className="Question-Body-Button" onClick={()=>{newQuestion();}}>True</button>
-      <button type="button" className="Question-Body-Button">False</button>
-      <div key = {reset}>
+      <button type="button" className="Question-Body-Button" onClick={()=>{newQuestion(true);}}>True</button>
+      <button type="button" onClick={()=>{newQuestion(false);}} className="Question-Body-Button">False</button>
       <div className="progress-bar2"
-
+      key = {reset}
       onAnimationEnd={() => {
-        setReset(reset+1);
-        newQuestion();}}
+        newQuestion(null);}}
       />
-      </div>
       <div className="progress-bar1"
       onAnimationEnd={() => {navigate(`/`, { replace: true })}}
       />
     </div>
   )
 }
+
+
+
+
 const HomePage = () => {
   const [title, SetTitle] = useState('Quiz !');
 

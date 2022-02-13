@@ -101,7 +101,17 @@ body {
 }
 
 
+
 /*---------------------------------- question ------------------------------------------------------------------------------------------------*/
+
+.Question-score {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: calc(1.5vh + 1.5vw + 15px);
+  font-family: 'Comfortaa', cursive;
+  color: black;
+}
 
 .Question-Body {
   height: 100vh;
@@ -149,17 +159,14 @@ width: 100vw;
   }to {
     width: 0vw
   }
-
-
 }
+
 @keyframes progressBar2 {
-  0% {
+  from {
 width: 100vw;
-  }99% {
+  }to {
     width: 0vw;
     --animation-duration: calc(var(--animation-duration)*0.9s);
-  }100% {
-    width: 100vw;
   }
 }
 /* ---------- credit to https://codepen.io/mohaiman/pen/MQqMyo for background ---------------------------------------*/

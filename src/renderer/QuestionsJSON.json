@@ -1,0 +1,9 @@
+{
+"active": {
+ "test-true": ["groupname-testing", true],
+ "test-false": ["groupname-testing", false]
+},
+"inactive": {
+ "test": ["groupname", false]
+}
+}
