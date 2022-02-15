@@ -162,11 +162,15 @@ const HomePage = () => {
     fetch(baseURL)
     .then((response) => response.json())
     .then((data2) => {
-      console.log(data2);
+      console.log("status", data2.status);
+      if (data2 === {
+        "detail": "You already used all of your plan's requests this month."
+    }) {return}
       databaseTable = data2;
     })
     .catch((error) => {
       console.error(error);
+      return false;
     });
     console.log();
     for (let i = 0; i < 20; i += 1) {
