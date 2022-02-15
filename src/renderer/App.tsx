@@ -3,16 +3,34 @@
 
 import { useState, useEffect } from 'react';
 import { MemoryRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import quizData2 from './QuestionsJSON.json';
 import './App.css';
+// import scoreJSON from './Score.json';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const quizData: { [key: string]: any } = quizData2;
 
-let globalState = {
+// const Pusher = require("pusher");
+
+// const pusher = new Pusher({
+//   appId: "1347623",
+//   key: "4370162c8a6278c33c2a",
+//   secret: "036e36522cff76298e64",
+//   cluster: "ap4",
+//   useTLS: true
+// });
+
+// pusher.trigger("my-channel", "my-event", {
+//   message: "hello world"
+// });
+
+const globalState = {
   score: 0,
   HScore: 0,
 };
+
+
 
 console.log(quizData);
 
@@ -104,6 +122,23 @@ const HomePage = () => {
 
   const navigate = useNavigate();
 
+
+  const handleSubmit = (e:any) => {
+		e.preventDefault();
+
+		const objt = globalState.HScore;
+
+		// eslint-disable-next-line promise/catch-or-return
+		axios
+			.post(
+				'https://sheet.best/api/sheets/eeabed85-8ff0-449f-bcdc-8bcad89f5beb',
+				objt
+			)
+			// eslint-disable-next-line promise/always-return
+			.then((response) => {
+				console.log(response);
+			});
+	};
 
   const Bubbles = () => {
     return (
