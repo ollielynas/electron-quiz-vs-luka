@@ -36,6 +36,14 @@ body {
   top: 0;
   left: 0;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.column {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -75,7 +83,7 @@ body {
 .settings {
   height: 8vh;
   width: 8vh;
-  align-text: center;
+  text-align: center;
   z-index: 3;
   top: 0;
   left: 0;
@@ -101,8 +109,17 @@ body {
 }
 
 
-
 /*---------------------------------- question ------------------------------------------------------------------------------------------------*/
+
+.true-false-buttons {
+    position: absolute;
+    top: 63vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
 
 .Question-score {
   position: absolute;
@@ -169,6 +186,23 @@ width: 100vw;
     --animation-duration: calc(var(--animation-duration)*0.9s);
   }
 }
+
+/*---------------------------------- last score ------------------------------------------------------------------------------------------------*/
+
+
+.Last-Score {
+  margin-left: 7vw;
+  padding: calc(0.5vw + 0.5vh + 10px);
+  height: 40vh;
+  font-size: calc(0.7vh + 0.8vw + 10px);
+  font-family: 'Comfortaa', cursive;
+  color: black;
+  border-radius: 15px;
+  border: 4px solid rgb(0, 0, 0);
+  margin-top: 16vh;
+}
+
+
 /* ---------- credit to https://codepen.io/mohaiman/pen/MQqMyo for background ---------------------------------------*/
 
 .circles {

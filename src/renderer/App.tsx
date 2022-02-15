@@ -9,6 +9,11 @@ import './App.css';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const quizData: { [key: string]: any } = quizData2;
 
+let globalState = {
+  score: 0,
+  HScore: 0,
+};
+
 console.log(quizData);
 
 // const { BrowserWindow } = require('electron');
@@ -24,6 +29,10 @@ const Question = () => {
   const [reset, setReset] = useState(1);
   const [score, setScore] = useState(0);
 
+  globalState.score = score;
+  if (score > globalState.HScore) {
+    globalState.HScore = score;
+  }
 
   console.log("animation duration",animationDuration);
   const sleep = (milliseconds: number) => {
@@ -67,8 +76,10 @@ const Question = () => {
       <div className="Question-Body-Text">
         <p>{question}</p>
       </div>
+      <div className="true-false-buttons">
       <button type="button" className="Question-Body-Button" onClick={()=>{newQuestion(true);}}>True</button>
       <button type="button" onClick={()=>{newQuestion(false);}} className="Question-Body-Button">False</button>
+      </div>
       <div className="progress-bar2"
       key = {reset}
       onAnimationEnd={() => {
@@ -118,6 +129,7 @@ const HomePage = () => {
       <button type="button" className="settings">&#x2699;</button>
       <Bubbles />
       <div className="content">
+        <div className="column">
         <div className="title">
           <p>{title}</p>
         </div>
@@ -161,8 +173,13 @@ const HomePage = () => {
           Import / Create Questions &nbsp;{'>'}
         </button>
       </div>
-        {/* <button onClick = { () => {toggle}}>{playing ? "Pause" : "Play"}</button> */}
       </div>
+      <div className="Last-Score">
+        <p>Last Score: {globalState.score}</p>
+        <p>Best Score: {globalState.HScore}</p>
+      </div>
+      </div>
+
     </div>
   );
 };
