@@ -149,14 +149,15 @@ const HomePage = () => {
 
   const updateLeaderboard = () => {
 
-    let httpStatus = 0;
-    // eslint-disable-next-line promise/catch-or-return, func-names
-    fetch('https://sheet.best/api/sheets/eeabed85-8ff0-449f-bcdc-8bcad89f5beb').then(function(response) {
-  console.log("status",response.status);
-  httpStatus = response.status;
-});
+    // disabled to minimise api calls
+//     let httpStatus = 0;
+//     // eslint-disable-next-line promise/catch-or-return, func-names
+//     fetch('https://sheet.best/api/sheets/eeabed85-8ff0-449f-bcdc-8bcad89f5beb').then(function(response) {
+//   console.log("status",response.status);
+//   httpStatus = response.status;
+// });
 
-if (httpStatus === 200)  {
+// if (httpStatus === 200)  {
 
     fetch(baseURL)
     .then((response) => response.json())
@@ -186,7 +187,8 @@ if (httpStatus === 200)  {
           .then(console.log)
           .catch(console.error);
       }
-    }}
+    }
+  // }
   };
 
   const Bubbles = () => {
