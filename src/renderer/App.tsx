@@ -1,3 +1,4 @@
+/* eslint-disable promise/always-return */
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-console */
 
@@ -11,26 +12,44 @@ import './App.css';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const quizData: { [key: string]: any } = quizData2;
 
-// const Pusher = require("pusher");
 
-// const pusher = new Pusher({
-//   appId: "1347623",
-//   key: "4370162c8a6278c33c2a",
-//   secret: "036e36522cff76298e64",
-//   cluster: "ap4",
-//   useTLS: true
-// });
 
-// pusher.trigger("my-channel", "my-event", {
-//   message: "hello world"
-// });
+
+const data = {
+  Id: 10,
+  Name: "Jack Doe",
+  Age: 97,
+  "Created at": new Date(),
+};
+
+// Add one line to the sheet
+fetch("https://sheet.best/api/sheets/eeabed85-8ff0-449f-bcdc-8bcad89f5beb", {
+  method: "POST",
+  mode: "cors",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(data),
+})
+  .then((r) => r.json())
+  // eslint-disable-next-line @typescript-eslint/no-shadow
+  .then((data) => {
+    // The response comes here
+    console.log(data);
+  })
+  .catch((error) => {
+    // Errors are reported there
+    console.log(error);
+  });
 
 const globalState = {
   score: 0,
   HScore: 0,
 };
 
-
+console.log("database",fetch(
+"https://sheet.best/api/sheets/eeabed85-8ff0-449f-bcdc-8bcad89f5beb"
+  ));
 
 console.log(quizData);
 
@@ -111,6 +130,7 @@ const Question = () => {
 }
 
 
+const baseURL = "https://sheet.best/api/sheets/eeabed85-8ff0-449f-bcdc-8bcad89f5beb";
 
 
 const HomePage = () => {
@@ -123,22 +143,36 @@ const HomePage = () => {
   const navigate = useNavigate();
 
 
-  const handleSubmit = (e:any) => {
-		e.preventDefault();
+  fetch(baseURL)
+  .then((response) => response.json())
+  .then((data2) => {
+    console.log(data2);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 
-		const objt = globalState.HScore;
+  const updateLeaderboard = () => {
+  for (let i = 0; i < 20; i+= 1) {
+    if ()
+    fetch(`${baseURL}/${i.toString()}`, {
+      method: "PATCH",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        Name: "Jack Doe",
 
-		// eslint-disable-next-line promise/catch-or-return
-		axios
-			.post(
-				'https://sheet.best/api/sheets/eeabed85-8ff0-449f-bcdc-8bcad89f5beb',
-				objt
-			)
-			// eslint-disable-next-line promise/always-return
-			.then((response) => {
-				console.log(response);
-			});
-	};
+      }),
+    })
+      .then((r) => r.json())
+      .then(console.log)
+      .catch(console.error);
+
+  }
+  }
+
 
   const Bubbles = () => {
     return (
@@ -173,6 +207,7 @@ const HomePage = () => {
           type="button"
           className="button"
           onClick={async () => {
+            updateLeaderboard();
             console.log("new game");
             SetTitle('Ready.');
             await sleep(850);
